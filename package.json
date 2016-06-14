@@ -1,0 +1,14 @@
+{
+  "name": "react-click-handler",
+  "version": "1.0.0",
+  "description": "A React component that helps assign and remove focus to components based on click events.",
+  "main": "PageClickHandler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew Oxley",
+  "license": "ISC",
+  "devDependencies": {
+    "react-tools": "^0.13.3"
+  }
+}
