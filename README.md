@@ -12,5 +12,5 @@ This component expects to receive an array of selector objects of the form:
 ```
 
 When a click event occurs, this component calls the given handlers for the selector that is **closest** in the DOM tree to the event source.
-The associated focus property is either **toggled** or set to **true**.
+The associated focus property on the parent state (boolean) is either toggled or set to **true**.
 All other focus properties on the page are set to **false**.
