@@ -19,13 +19,14 @@ const pageClickSelectors = [
         toggle: false,
         sideEffect: false
     }
-]
+];
 
 <PageClickHandler
     wrapperClass={'page-wrapper'}
     parentState={this.state}
     setParentState={this.setState}
-    selectors={pageClickSelectors}>
+    selectors={pageClickSelectors}
+>
     <div id={‘first-component’} className={this.state.firstComponentFocussed && 'open'}></div>
     <div id='second-component' className={this.state.secondComponentFocussed && 'open'}></div>
 </PageClickHandler>
