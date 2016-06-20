@@ -5,7 +5,7 @@ Often, it is necessary to apply styling rules to a page based on where the user 
 
 For example:
 
-```javascript
+```jsx
 const pageClickSelectors = [
     {
         selector: '#first-component',
@@ -26,7 +26,7 @@ const pageClickSelectors = [
     parentState={this.state}
     setParentState={this.setState}
     selectors={pageClickSelectors}>
-    <div id=‘first-component’ className={this.state.firstComponentFocussed && 'open'}></div>
+    <div id={‘first-component’} className={this.state.firstComponentFocussed && 'open'}></div>
     <div id='second-component' className={this.state.secondComponentFocussed && 'open'}></div>
 </PageClickHandler>
 ```
