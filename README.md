@@ -1,7 +1,41 @@
 # react-click-handler
 #### A React component that helps assign and remove focus to components based on click events.
 
-This component expects to receive an array of selector objects of the form:
+Often, it is necessary to apply styling rules to a page based on where the user has clicked. React-click-handler can be used to wrap any component and track the ‘focus’ of any of its child components, by setting an appropriate variable on it’s state at the exlusion of other tracked components.
+
+For example:
+
+```javascript
+const pageClickSelectors = [
+    {
+        selector: '#first-component',
+        focusState: 'firstComponentFocussed',
+        toggle: true,
+        sideEffect: false
+    },
+    {
+        selector: '#second-component',
+        focusState: 'secondComponentFocussed',
+        toggle: false,
+        sideEffect: false
+    }
+]
+
+<PageClickHandler
+    wrapperClass={'page-wrapper'}
+    parentState={this.state}
+    setParentState={this.setState}
+    selectors={pageClickSelectors}>
+    <div id=‘first-component’ className={this.state.firstComponentFocussed && 'open'}></div>
+    <div id='second-component' className={this.state.secondComponentFocussed && 'open'}></div>
+</PageClickHandler>
+```
+
+Clicking on the first div will set its corresponding focus state variable to true and ensure that the second div's focus state variable is false.
+
+###### PaceClickSelectors
+
+In addition to a classname to apply to the wrapper, and the state and setState methods of your parent component, this wrapper component expects to receive an array of selector objects of the form:
 ```javascript
 {
     selector: // a STRING representing, in CSS selector syntax, the element we want to attach a focus handler on
