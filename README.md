@@ -1,7 +1,7 @@
 # react-click-handler
-#### A React component that helps assign and remove focus to components based on click events.
+#### A React wrapper component that helps assign and remove focus to components based on click events.
 
-Often, it is necessary to apply styling rules to a page based on where the user has clicked. React-click-handler can be used to wrap any component and track the ‘focus’ of any of its child components, by setting a corresponding variable on it’s state at the exclusion of other tracked components.
+Often, it is necessary to apply styling rules to a page based on where the user has clicked. React-click-handler can be used to wrap any component and track the ‘focus’ of any of its child components, by setting a corresponding variable on its state at the exclusion of other tracked components.
 
 For example:
 

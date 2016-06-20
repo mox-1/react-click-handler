@@ -3,13 +3,6 @@ import getFirstMatchingParentSelector from 'utils/getFirstMatchingParentSelector
 
 class ReactClickHandler extends Component {
 
-    static propTypes = {
-        wrapperClass: PropTypes.string.isRequired,
-        parentState: PropTypes.object.isRequired,
-        setParentState: PropTypes.func.isRequired,
-        selectors: PropTypes.array.isRequired
-    }
-
     componentWillMount() {
         this.setState({
             selectorList: this.props.selectors.map((obj)=>(obj.selector))
@@ -55,6 +48,13 @@ class ReactClickHandler extends Component {
             <div className={this.props.wrapperClass} onClick={this._handlePageClick}>{this.props.children}</div>
         );
     }
+}
+
+ReactClickHandler.propTypes = {
+    wrapperClass: PropTypes.string.isRequired,
+    parentState: PropTypes.object.isRequired,
+    setParentState: PropTypes.func.isRequired,
+    selectors: PropTypes.array.isRequired
 }
 
 export default ReactClickHandler;
