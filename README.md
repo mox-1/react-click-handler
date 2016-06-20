@@ -32,7 +32,7 @@ const pageClickSelectors = [
 </ReactClickHandler>
 ```
 
-Clicking on the first div will set its corresponding focus state variable to **true** and ensure that the second div's focus state variable is false.
+Clicking on the first div will set its corresponding focus state variable to **true** and ensure that the second div's focus state variable is **false**.
 
 #### PageClickSelectors
 
