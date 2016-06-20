@@ -21,7 +21,7 @@ const pageClickSelectors = [
     }
 ];
 
-<PageClickHandler
+<ReactClickHandler
     wrapperClass={'page-wrapper'}
     parentState={this.state}
     setParentState={this.setState}
@@ -29,7 +29,7 @@ const pageClickSelectors = [
 >
     <div id={‘first-component’} className={this.state.firstComponentFocussed && 'open'}></div>
     <div id='second-component' className={this.state.secondComponentFocussed && 'open'}></div>
-</PageClickHandler>
+</ReactClickHandler>
 ```
 
 Clicking on the first div will set its corresponding focus state variable to **true** and ensure that the second div's focus state variable is false.
