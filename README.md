@@ -27,8 +27,8 @@ const pageClickSelectors = [
     setParentState={this.setState}
     selectors={pageClickSelectors}
 >
-    <div id={‘first-component’} className={this.state.firstComponentFocussed && 'open'}></div>
-    <div id='second-component' className={this.state.secondComponentFocussed && 'open'}></div>
+    <div id={'first-component'} className={this.state.firstComponentFocussed && 'open'}></div>
+    <div id={'second-component'} className={this.state.secondComponentFocussed && 'open'}></div>
 </ReactClickHandler>
 ```
 
