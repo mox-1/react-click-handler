@@ -1,8 +1,8 @@
 (function (global, factory) {
     if (typeof define === "function" && define.amd) {
-        define(['exports', 'react', 'utils/getFirstMatchingParentSelector'], factory);
+        define(['exports', 'react', './utils/getFirstMatchingParentSelector'], factory);
     } else if (typeof exports !== "undefined") {
-        factory(exports, require('react'), require('utils/getFirstMatchingParentSelector'));
+        factory(exports, require('react'), require('./utils/getFirstMatchingParentSelector'));
     } else {
         var mod = {
             exports: {}
@@ -93,27 +93,23 @@
     var ReactClickHandler = function (_Component) {
         _inherits(ReactClickHandler, _Component);
 
-        function ReactClickHandler() {
+        function ReactClickHandler(props) {
             _classCallCheck(this, ReactClickHandler);
 
-            return _possibleConstructorReturn(this, Object.getPrototypeOf(ReactClickHandler).apply(this, arguments));
+            var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ReactClickHandler).call(this, props));
+
+            _this.selectorList = props.selectors.map(function (obj) {
+                return obj.selector;
+            });
+            return _this;
         }
 
         _createClass(ReactClickHandler, [{
-            key: 'componentWillMount',
-            value: function componentWillMount() {
-                this.setState({
-                    selectorList: this.props.selectors.map(function (obj) {
-                        return obj.selector;
-                    })
-                });
-            }
-        }, {
             key: '_handlePageClick',
             value: function _handlePageClick(e) {
                 var _this2 = this;
 
-                var firstMatch = (0, _getFirstMatchingParentSelector2.default)(e.target, this.state.selectorList),
+                var firstMatch = (0, _getFirstMatchingParentSelector2.default)(e.target, this.selectorList),
                     focusStateToBeChanged = void 0;
                 if (firstMatch) {
                     this.props.selectors.forEach(function (selectorObj) {
@@ -142,7 +138,7 @@
             value: function render() {
                 return _react2.default.createElement(
                     'div',
-                    { className: this.props.wrapperClass, onClick: this._handlePageClick },
+                    { className: this.props.wrapperClass, onClick: this._handlePageClick.bind(this) },
                     this.props.children
                 );
             }

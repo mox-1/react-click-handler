@@ -16,9 +16,8 @@
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-    exports.default = getParents;
-    function getParents(elem, selectorList) {
-
+    exports.default = getFirstMatchingParentSelector;
+    function getFirstMatchingParentSelector(elem, selectorList) {
         elem = elem.parentNode;
         for (; elem && elem !== document; elem = elem.parentNode) {
             if (selectorList) {

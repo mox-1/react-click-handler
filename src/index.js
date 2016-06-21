@@ -1,14 +1,13 @@
 import React, { Component, PropTypes } from 'react';
-import getFirstMatchingParentSelector from 'utils/getFirstMatchingParentSelector';
+import getFirstMatchingParentSelector from './utils/getFirstMatchingParentSelector';
 
 class ReactClickHandler extends Component {
-    componentWillMount() {
-        this.setState({
-            selectorList: this.props.selectors.map((obj)=>(obj.selector))
-        });
+    constructor(props) {
+        super(props);
+        this.selectorList = props.selectors.map((obj)=>(obj.selector))
     }
     _handlePageClick(e) {
-        let firstMatch = getFirstMatchingParentSelector(e.target, this.state.selectorList),
+        let firstMatch = getFirstMatchingParentSelector(e.target, this.selectorList),
             focusStateToBeChanged;
         if (firstMatch) {
             this.props.selectors.forEach((selectorObj) => {
@@ -42,7 +41,7 @@ class ReactClickHandler extends Component {
     }
     render() {
         return (
-            <div className={this.props.wrapperClass} onClick={this._handlePageClick}>{this.props.children}</div>
+            <div className={this.props.wrapperClass} onClick={this._handlePageClick.bind(this)}>{this.props.children}</div>
         );
     }
 }

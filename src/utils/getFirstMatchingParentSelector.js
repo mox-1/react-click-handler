@@ -1,5 +1,4 @@
-export default function getParents(elem, selectorList) {
-
+export default function getFirstMatchingParentSelector(elem, selectorList) {
     elem = elem.parentNode;
     for (; elem && elem !== document; elem = elem.parentNode) {
         if (selectorList) {
