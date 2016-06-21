@@ -50,5 +50,5 @@ When a click event occurs, this component calls the given handlers for the selec
 The associated focus property on the parent state (boolean) is either toggled or set to **true**.
 All other focus properties on the page are set to **false**.
 
-[npm-url]: https://npmjs.org/package/react-npm-boilerplate
+[npm-url]: https://npmjs.org/package/react-click-handler
 [npm-image]: http://img.shields.io/npm/v/react-npm-boilerplate.svg
